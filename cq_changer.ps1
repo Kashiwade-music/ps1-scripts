@@ -3,11 +3,10 @@
 $cq = 32
 
 foreach($files in $(Get-ChildItem -Recurse)) {
-        if (-not ($files.BaseName -match "^CRF_") -and -not ($files.BaseName -match "^CQ_")){ {
-            if (($($files.Extension) -eq ".mkv") -or ($($files.Extension) -eq ".mp4")) {
-                Write-Host $files.FullName
-                $sum=$sum+$files.Length
-            }
+    if (-not ($files.BaseName -match "^CRF_") -and -not ($files.BaseName -match "^CQ_")){ 
+        if (($($files.Extension) -eq ".mkv") -or ($($files.Extension) -eq ".mp4")) {
+            Write-Host $files.FullName
+            $sum=$sum+$files.Length
         }
     }
 }
